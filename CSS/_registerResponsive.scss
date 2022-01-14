@@ -1,0 +1,24 @@
+@include sm-screen {
+  .main {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+@include md-screen {
+  .main {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+@include lg-screen {
+  .main {
+    width: 55%;
+    margin: 0 auto;
+  }
+}
+@include xlg-screen {
+  .main {
+    width: 40%;
+    margin: 0 auto;
+  }
+}

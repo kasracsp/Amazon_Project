@@ -1,0 +1,94 @@
+@import "config";
+@import "amazonNav";
+@import "amazonHomePage";
+@import "amazonMore";
+@import "amazonSearch";
+@import "amazonPlayPage";
+@import "amazonAlbum";
+@import "amazonResponsive";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  --dark-color: #000;
+  --less-dark-color: rgba(0, 0, 0, 0.7);
+  --more-dark-color: rgba(0, 0, 0, 0.85);
+  --grey-color: #444;
+  --bright-color: #fff;
+  --less-bright-color: rgba(255, 255, 255, 0.2);
+  --more-bright-color: rgba(255, 255, 255, 0.4);
+  --shadow-color: #bebebe;
+  --hover-color: #00abff;
+  --active-color: #0085b0;
+  --halloween-color: #f56f16;
+  --sun-color: #fe9600;
+  width: 100%;
+  min-height: 100vh;
+  background: var(--dark-color);
+  color: var(--bright-color);
+  font-family: "Roboto", sans-serif;
+}
+.overlay {
+  position: fixed;
+  z-index: 10;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+.overlay.show {
+  display: flex;
+  pointer-events: all;
+}
+body.halloween {
+  --dark-color: #111;
+  --grey-color: #444;
+  --bright-color: #fff;
+  --shadow-color: #bebebe;
+  --hover-color: #f56f16;
+  --active-color: #b14624;
+}
+body.day {
+  --dark-color: #fff;
+  --grey-color: #444;
+  --less-dark-color: rgba(255, 255, 255, 0.7);
+  --more-dark-color: rgba(255, 255, 255, 0.9);
+  --bright-color: #000;
+  --less-bright-color: rgba(0, 0, 0, 0.2);
+  --shadow-color: #bebebe;
+  --hover-color: #00abff;
+  --active-color: #0085b0;
+}
+a {
+  color: var(--bright-color);
+  text-decoration: none;
+}
+ul,
+li {
+  list-style: none;
+}
+button {
+  cursor: pointer;
+  user-select: none;
+}
+.material-icons {
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: 0.2s;
+  user-select: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+}

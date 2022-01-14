@@ -1,0 +1,79 @@
+@import "config";
+@import "signIn";
+@import "signUp";
+@import "forgetPass";
+@import "registerResponsive";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  --dark-color: #000;
+  --less-dark-color: rgba(0, 0, 0, 0.7);
+  --more-dark-color: rgba(0, 0, 0, 0.85);
+  --grey-color: #444;
+  --bright-color: #fff;
+  --less-bright-color: #eeeeee44;
+  --more-bright-color: #eee;
+  --shadow-color: #bebebe;
+  --hover-color: #ffc700;
+  --focus-color: #ff5e00;
+  --btn-color: linear-gradient(to bottom, #ffe740, #ffc700);
+  --error-color: #ff2a4a;
+  --correct-color: #ff5f2a;
+  --anchor-color: #0072c2;
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  background: var(--less-bright-color);
+  color: var(--dark-color);
+}
+a {
+  text-decoration: none;
+  color: var(--anchor-color);
+}
+ul,
+li {
+  list-style: none;
+}
+.nav {
+  width: 100%;
+  text-align: center;
+  font-size: 3rem;
+  padding: 0.5rem;
+  font-weight: bold;
+  font-family: "oswald", "Roboto", sans-serif;
+  border-bottom: 1px solid var(--shadow-color);
+  background: var(--more-bright-color);
+}
+.footer {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border-top: 2px solid transparent;
+  border-image: linear-gradient(to right, #fff, #ddd, #fff);
+  border-image-slice: 1;
+
+  .footer-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .copyright {
+    font-size: 0.8rem;
+    color: var(--grey-color);
+  }
+}

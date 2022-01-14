@@ -1,0 +1,36 @@
+.main {
+  .form-el {
+    .sign-up {
+      gap: 1rem;
+      border: none;
+
+      .form-input {
+        border: 1px solid var(--grey-color);
+        border-radius: 0.2rem;
+
+        input {
+          border-radius: 0.2rem;
+        }
+
+        &:nth-child(1) {
+          border-bottom: 1px solid var(--grey-color);
+
+          input {
+            border-radius: 0.2rem;
+          }
+        }
+      }
+    }
+
+    .info {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 0.5rem;
+
+      span {
+        color: #0af;
+      }
+    }
+  }
+}

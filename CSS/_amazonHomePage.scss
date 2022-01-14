@@ -1,0 +1,344 @@
+.main {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  width: 100%;
+
+  .wrapper {
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .category-header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      padding-top: 0;
+
+      .category-name {
+        text-transform: capitalize;
+        font-size: 1.2rem;
+        font-family: "Oswald", sans-serif;
+      }
+
+      .category-controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.1rem;
+
+        .material-icons {
+          &:hover {
+            color: var(--grey-color);
+          }
+
+          &:active {
+            border: 1px solid var(--bright-color);
+          }
+        }
+
+        .see-all {
+          text-transform: uppercase;
+          font-size: 0.8rem;
+          font-weight: bold;
+          padding: 0.5rem 1rem;
+          border-radius: 1.5rem;
+          font-family: "Oswald", sans-serif;
+          background: var(--grey-color);
+          color: #fff;
+          transition: 0.1s;
+
+          &:active {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+
+    .contents-wrapper {
+      width: 100%;
+      overflow: hidden;
+
+      &.touchable {
+        overflow: scroll;
+      }
+
+      .contents {
+        display: inline-flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0 1rem;
+        gap: 2rem;
+        transform: translateX(0);
+        transition: 1s ease-in-out;
+        width: 600%;
+
+        .content {
+          max-width: 280px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          overflow: hidden;
+          position: relative;
+
+          .head-content {
+            position: relative;
+            max-width: 280px;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            cursor: pointer;
+
+            .content-img {
+              flex: 1;
+              overflow: hidden;
+              border-radius: 0.5rem;
+              position: relative;
+              max-width: 280px;
+              max-height: 280px;
+
+              .artist-thumb {
+                width: 100%;
+                height: 100%;
+                border-radius: 0.5rem;
+              }
+            }
+
+            &:hover {
+              &::after {
+                content: "";
+                position: absolute;
+                pointer-events: none;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                background: var(--less-dark-color);
+              }
+
+              .content-controls {
+                opacity: 1;
+
+                .material-icons {
+                  font-size: 2rem;
+
+                  &:hover {
+                    background: var(--less-bright-color);
+                  }
+
+                  &:active {
+                    color: var(--hover-color);
+                  }
+                }
+
+                .play {
+                  font-size: 4rem;
+
+                  &:active {
+                    transform: scale(1.1);
+                  }
+                }
+              }
+            }
+
+            .content-controls {
+              width: 100%;
+              position: absolute;
+              top: 50%;
+              transform: translate(0, -50%);
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              z-index: 3;
+              padding: 0.2rem;
+              opacity: 0;
+              transition: 0.1s;
+            }
+          }
+
+          .artist-song {
+            width: 100%;
+            max-width: 280px;
+            font-size: 1rem;
+            color: var(--bright-color);
+            text-align: left;
+            text-transform: capitalize;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            padding-top: 0.5rem;
+            padding-left: 0.1rem;
+
+            &:hover {
+              color: var(--hover-color);
+            }
+          }
+
+          .artist-name {
+            width: 100%;
+            font-size: 0.9rem;
+            color: var(--shadow-color);
+            text-align: left;
+            text-transform: capitalize;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            padding-top: 0.5rem;
+            padding-left: 0.1rem;
+
+            &:hover {
+              color: var(--active-color);
+              overflow: visible;
+              white-space: normal;
+              height: auto;
+            }
+          }
+        }
+      }
+
+      .top-songs {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(3, 5rem);
+        padding: 0 1rem;
+        gap: 1rem;
+        transform: translateX(0);
+        transition: 1s ease-in-out;
+        width: 500%;
+
+        .content {
+          width: 100%;
+          min-width: 400px;
+          height: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          gap: 1rem;
+
+          .head-content {
+            width: 5rem;
+            height: 5rem;
+
+            .content-img {
+              width: 100%;
+              height: 100%;
+
+              .artist-thumb {
+                width: 100%;
+                height: 100%;
+              }
+            }
+
+            .content-controls {
+              justify-content: center;
+
+              .play {
+                font-size: 2rem;
+
+                &:hover {
+                  color: var(--bright-color);
+                }
+              }
+            }
+
+            &:hover {
+              .content-controls {
+                .play {
+                  font-size: 2rem;
+                }
+              }
+            }
+          }
+
+          &:hover {
+            .head-content {
+              &::after {
+                content: "";
+                position: absolute;
+                pointer-events: none;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                background: var(--less-dark-color);
+              }
+            }
+
+            .material-icons {
+              display: flex;
+            }
+
+            .content-controls {
+              opacity: 1;
+            }
+          }
+
+          .content-controls {
+            margin-left: auto;
+            display: flex;
+            opacity: 0;
+
+            .material-icons {
+              &:hover {
+                color: var(--hover-color);
+              }
+
+              &:active {
+                transform: scale(1.1);
+              }
+            }
+          }
+
+          .artist-feature {
+            .artist-song {
+              width: auto;
+              font-size: 1rem;
+              color: var(--bright-color);
+              text-align: left;
+              text-transform: capitalize;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+              padding-top: 0.5rem;
+
+              &:hover {
+                color: var(--hover-color);
+                overflow: visible;
+                white-space: normal;
+                height: auto;
+              }
+            }
+
+            .artist-name {
+              width: auto;
+              font-size: 0.9rem;
+              color: var(--shadow-color);
+              text-align: left;
+              text-transform: capitalize;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+              padding-top: 0.5rem;
+
+              &:hover {
+                color: var(--active-color);
+                overflow: visible;
+                white-space: normal;
+                height: auto;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

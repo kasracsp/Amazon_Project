@@ -1,0 +1,219 @@
+@include sm-screen {
+  .nav {
+    .left-nav {
+      .setting {
+        left: 86%;
+      }
+    }
+
+    .right-nav {
+      .search-options {
+        .sign-in-text {
+          display: flex;
+        }
+
+        .sign-in-icon {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .main {
+    .wrapper {
+      .category-header {
+        .category-name {
+          font-size: 1.5rem;
+        }
+      }
+
+      .contents-wrapper {
+        .contents {
+          width: 400%;
+        }
+
+        .top-songs {
+          width: 380%;
+
+          .content {
+            .artist-feature {
+              .artist-name {
+                width: auto;
+              }
+
+              .artist-song {
+                width: auto;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .album-wrapper {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .playPage {
+    .album-details {
+      flex-direction: row;
+
+      .album-thumb-holder {
+        margin: 0;
+      }
+    }
+
+    .songs {
+      .song {
+        .left-items {
+          .song-name {
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+
+  .amazon-search-page {
+    .wrapper {
+      h3 {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .amazon-album {
+    #parent-type {
+      font-size: 2rem;
+    }
+  }
+}
+@include md-screen {
+  .nav {
+    justify-content: flex-start;
+
+    .right-nav {
+      width: 100%;
+      justify-content: space-between;
+
+      .nav-options {
+        .nav-option {
+          .nav-text {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+
+  .main {
+    .wrapper {
+      .category-header {
+        .category-name {
+          font-size: 2rem;
+        }
+      }
+
+      .contents-wrapper {
+        .contents {
+          width: 400%;
+        }
+
+        .top-songs {
+          width: 300%;
+        }
+      }
+    }
+  }
+}
+@include lg-screen {
+  .nav {
+    .right-nav {
+      .search-options {
+        .search {
+          display: flex;
+          padding-right: 1rem;
+
+          #search-el {
+            width: 15rem;
+          }
+        }
+
+        #search-out {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .main {
+    .wrapper {
+      padding: 2rem;
+
+      .contents-wrapper {
+        .contents {
+          width: 250%;
+        }
+
+        .top-songs {
+          width: 250%;
+        }
+      }
+    }
+
+    .album-wrapper {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .amazon-search-page {
+    .wrapper {
+      h3 {
+        font-size: 2.5rem;
+      }
+    }
+  }
+
+  .amazon-album {
+    .album-wrapper {
+      padding: 2rem;
+    }
+
+    #parent-type {
+      font-size: 2.5rem;
+      padding-left: 2rem;
+    }
+  }
+}
+@include xlg-screen {
+  .nav {
+    .right-nav {
+      .search-options {
+        .search {
+          #search-el {
+            width: 30rem;
+          }
+        }
+      }
+    }
+  }
+
+  .main {
+    .wrapper {
+      .contents-wrapper {
+        .contents {
+          width: 250%;
+        }
+
+        .top-songs {
+          width: 200%;
+        }
+      }
+
+      .music-types {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/amazon.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="JS/amazonNav.js" defer></script>
+    <script src="JS/amazon.js" type="module"></script>
+    <title>Amazon</title>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="left-nav">
+        <a href="amazon.html" class="logo">
+        Amazon Music
+        </a>
+        <span class="material-icons"id="configuration">settings_brightness</span>
+        <div class="setting">
+          <span class="material-icons active"id="night">flourescent</span>
+          <span class="material-icons"id="halloween">lightbulb</span>
+          <span class="material-icons"id="day">light_mode</span>
+        </div>
+      </div>
+      <div class="right-nav">
+        <div class="nav-options">
+          <a href="amazon.html"class="nav-option active">
+          <span class="material-icons">home</span>
+          <span class="nav-text">home</span>
+          </a>
+          <a href="amazonAlbum.html?parent=podcast"class="nav-option">
+          <span class="material-icons active">podcasts</span>
+          <span class="nav-text">podcasts</span>
+          </a>
+          <div class="nav-option"id="library-nav">
+            <span class="material-icons active">headphones</span>
+            <div class="nav-text">
+              <span class="library-name">library</span>
+              <span class="material-icons library-icon">expand_more</span>
+            </div>
+            <div id="library-menu">
+              <a href="amazonAlbum.html?parent=all category">Music</a>
+              <a href="amazonAlbum.html?parent=podcast">Podcasts</a>
+            </div>
+          </div>
+        </div>
+        <div class="search-options">
+          <a href="amazonSearch.html"class="search">
+          <input type="text" id="search-el"placeholder="search">
+          <span class="material-icons"id="search-in">search</span>
+          </a>
+          <a href="amazonSearch.html" class="material-icons"id="search-out">search</a> 
+          <a href="amazonSignIn.html" class="sign-in sign-in-text">Sign in</a>
+          <a href="amazonSignIn.html" class="material-icons sign-in sign-in-icon">person</a>
+        </div>
+      </div>
+    </nav>
+    <main class="main">
+      <section class="wrapper">
+        <header class="category-header">
+          <h1 class="category-name">amazon original songs</h1>
+          <div class="category-controls">
+            <span class="material-icons chev-left control">chevron_left</span>
+            <span class="material-icons chev-right control">chevron_right</span>
+            <a href="#" class="see-all">see all</a>
+          </div>
+        </header>
+        <div class="contents-wrapper">
+          <div class="contents amazon-original-songs">
+          </div>
+        </div>
+      </section>
+      <section class="wrapper">
+        <header class="category-header">
+          <h1 class="category-name">feature this week</h1>
+          <div class="category-controls">
+            <span class="material-icons chev-left control">chevron_left</span>
+            <span class="material-icons chev-right control">chevron_right</span>
+            <a href="#" class="see-all">see all</a>
+          </div>
+        </header>
+        <div class="contents-wrapper">
+          <div class="contents feature-this-week">
+          </div>
+        </div>
+      </section>
+      <section class="wrapper">
+        <header class="category-header">
+          <h1 class="category-name">rediscover the coldplay</h1>
+          <div class="category-controls">
+            <span class="material-icons chev-left control">chevron_left</span>
+            <span class="material-icons chev-right control">chevron_right</span>
+            <a href="#" class="see-all">see all</a>
+          </div>
+        </header>
+        <div class="contents-wrapper">
+          <div class="contents rediscover-the-artist">
+          </div>
+        </div>
+      </section>
+      <!-- Top Songs -->
+      <section class="wrapper">
+        <header class="category-header">
+          <h1 class="category-name">top songs</h1>
+          <div class="category-controls">
+            <span class="material-icons chev-left control">chevron_left</span>
+            <span class="material-icons chev-right control">chevron_right</span>
+            <a href="#" class="see-all">see all</a>
+          </div>
+        </header>
+        <div class="contents-wrapper">
+          <div class="contents top-songs">
+          </div>
+        </div>
+      </section>
+    </main>
+    <template id="album-temp">
+      <article class="content">
+        <div class="head-content">
+          <div class="content-controls">
+            <a href="#"class="material-icons add">add</a>
+            <a href="#"class="material-icons play">play_arrow</a>
+            <span class="material-icons more">more_horiz</span>	
+          </div>
+          <a href="#" class="content-img">
+          <img src="" alt="" class="artist-thumb">
+          </a>
+        </div>
+        <p class="artist-song"></p>
+        <p class="artist-name"></p>
+      </article>
+    </template>
+    <template id="single-temp">
+      <article class="content">
+        <div class="head-content">
+          <a href="#" class="content-img">
+          <img src="images-sq/1.jpg" alt="" class="artist-thumb">
+          </a>
+          <div class="content-controls">
+            <a href="#"class="material-icons play">play_arrow</a>
+          </div>
+        </div>
+        <div class="artist-feature">
+          <p class="artist-song">shiver</p>
+          <p class="artist-name">ed sheeran</p>
+        </div>
+        <div class="content-controls">
+          <a href="#"class="material-icons add">add</a>
+          <span class="material-icons more">more_horiz</span>	
+        </div>
+      </article>
+    </template>
+    <template id="moreO">
+      <div class="more-option">
+        <a href="#">Play Similar Music</a>
+        <a href="#">Share this album</a>
+        <a href="#">View album</a>
+        <a href="#" class="more-artist-name"></a>
+      </div>
+    </template>
+    <div class="overlay">
+    </div>
+    <div class="holderMine">
+    </div>
+  </body>
+</html>

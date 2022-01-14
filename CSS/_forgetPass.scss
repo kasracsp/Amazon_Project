@@ -1,0 +1,37 @@
+.main {
+  min-height: 75vh;
+  .form-el {
+    .forget-pass {
+      border: none;
+
+      .form-input {
+        border: 1px solid var(--grey-color);
+        border-radius: 0.2rem;
+
+        input {
+          border-radius: 0.2rem;
+        }
+
+        &:nth-child(1) {
+          border-bottom: 1px solid var(--grey-color);
+
+          input {
+            border-radius: 0.2rem;
+          }
+        }
+      }
+    }
+
+    .continue {
+      margin-top: 0;
+    }
+
+    .forget-note {
+      margin-bottom: 3rem;
+
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+}

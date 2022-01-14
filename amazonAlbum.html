@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/amazon.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="JS/amazonNav.js" defer></script>
+    <script src="JS/amazonAlbum.js" type="module"></script>
+    <title>Amazon</title>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="left-nav">
+        <a href="amazon.html" class="logo">
+        Amazon Music
+        </a>
+        <span class="material-icons"id="configuration">settings_brightness</span>
+        <div class="setting">
+          <span class="material-icons active"id="night">flourescent</span>
+          <span class="material-icons"id="halloween">lightbulb</span>
+          <span class="material-icons"id="day">light_mode</span>
+        </div>
+      </div>
+      <div class="right-nav">
+        <div class="nav-options">
+          <a href="amazon.html"class="nav-option">
+          <span class="material-icons">home</span>
+          <span class="nav-text">home</span>
+          </a>
+          <a href="amazonAlbum.html?parent=podcast"class="nav-option"id="podcast-el">
+          <span class="material-icons">podcasts</span>
+          <span class="nav-text">podcasts</span>
+          </a>
+          <div class="nav-option active"id="library-nav">
+            <span class="material-icons active">headphones</span>
+            <div class="nav-text">
+              <span class="library-name">library</span>
+              <span class="material-icons library-icon">expand_more</span>
+            </div>
+            <div id="library-menu">
+              <a href="amazonAlbum.html?parent=all category">Music</a>
+              <a href="amazonAlbum.html?parent=podcast">Podcasts</a>
+            </div>
+          </div>
+        </div>
+        <div class="search-options">
+          <a href="amazonSearch.html"class="search">
+          <input type="text" id="search-el"placeholder="search">
+          <span class="material-icons"id="search-in">search</span>
+          </a>
+          <a href="amazonSearch.html" class="material-icons"id="search-out">search</a> 
+          <a href="amazonSignIn.html" class="sign-in sign-in-text">Sign in</a>
+          <a href="amazonSignIn.html" class="material-icons sign-in sign-in-icon">person</a>
+        </div>
+      </div>
+    </nav>
+    <main class="main amazon-album">
+      <h1 id="parent-type">Podcast</h1>
+      <div class="album-wrapper">
+      </div>
+      <div class="pag-holder">
+        <ul class="pagination">
+        </ul>
+      </div>
+    </main>
+    <template id="album-temp">
+      <article class="content">
+        <div class="head-content">
+          <div class="content-controls">
+            <a href="#"class="material-icons add">add</a>
+            <a href="#"class="material-icons play">play_arrow</a>
+            <span class="material-icons more">more_horiz</span>	
+          </div>
+          <a href="#" class="content-img">
+          <img src="" alt="" class="artist-thumb">
+          </a>
+        </div>
+        <p class="artist-song"></p>
+        <p class="artist-name"></p>
+      </article>
+    </template>
+    <template id="moreO">
+      <div class="more-option">
+        <a href="#">Play Similar Music</a>
+        <a href="#">Share this album</a>
+        <a href="#">View album</a>
+        <a href="#" class="more-artist-name"></a>
+      </div>
+    </template>
+    <div class="overlay">
+    </div>
+    <div class="holderMine">
+    </div>
+  </body>
+</html>

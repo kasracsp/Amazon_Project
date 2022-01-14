@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/amazon.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="JS/amazonNav.js" defer></script>
+    <script src="JS/amazonPlayPage.js" type="module"></script>
+    <title>Amazon</title>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="left-nav">
+        <a href="amazon.html" class="logo">
+        Amazon Music
+        </a>
+        <span class="material-icons"id="configuration">settings_brightness</span>
+        <div class="setting">
+          <span class="material-icons active"id="night">flourescent</span>
+          <span class="material-icons"id="halloween">lightbulb</span>
+          <span class="material-icons"id="day">light_mode</span>
+        </div>
+      </div>
+      <div class="right-nav">
+        <div class="nav-options">
+          <a href="amazon.html"class="nav-option">
+          <span class="material-icons">home</span>
+          <span class="nav-text">home</span>
+          </a>
+          <a href="amazonAlbum.html?parent=podcast"class="nav-option">
+          <span class="material-icons active">podcasts</span>
+          <span class="nav-text">podcasts</span>
+          </a>
+          <div class="nav-option"id="library-nav">
+            <span class="material-icons active">headphones</span>
+            <div class="nav-text">
+              <span class="library-name">library</span>
+              <span class="material-icons library-icon">expand_more</span>
+            </div>
+            <div id="library-menu">
+              <a href="amazonAlbum.html?parent=all category">Music</a>
+              <a href="amazonAlbum.html?parent=podcast">Podcasts</a>
+            </div>
+          </div>
+        </div>
+        <div class="search-options">
+          <a href="amazonSearch.html"class="search">
+          <input type="text" id="search-el"placeholder="search">
+          <span class="material-icons"id="search-in">search</span>
+          </a>
+          <a href="amazonSearch.html" class="material-icons"id="search-out">search</a> 
+          <a href="amazonSignIn.html" class="sign-in sign-in-text">Sign in</a>
+          <a href="amazonSignIn.html" class="material-icons sign-in sign-in-icon">person</a>
+        </div>
+      </div>
+    </nav>
+    <main class="main playPage">
+      <div class="album-details">
+        <div class="album-thumb-holder">
+          <img src=""id="album-thumb">
+        </div>
+        <div class="album-info">
+          <p id="album-type"></p>
+          <p id="album-name"></p>
+          <p id="album-artist"></p>
+          <p class="album-songs">
+            <span id="album-number"></span> . <span id="album-duration"></span> . <span id="album-release"></span>
+          </p>
+          <div class="album-controls">
+            <div class="album-progress">
+              <div class="album-play">
+                <span class="material-icons"id="play-pause">play_arrow</span>
+                <p id="play-pause-text">play</p>
+              </div>
+              <div class="progress-bar">
+                <p id="current-point">0</p>
+                <input type="range"min="0"max=""value="0"id="range-el">
+                <p id="end-point">4:21</p>
+                <div class="volume-holder">
+                  <span class="material-icons"id="volume">volume_up</span>
+                  <input type="range"min="0"max="1"step=".1"value=".5"id="volume-controll">
+                </div>
+              </div>
+            </div>
+            <span class="material-icons album-shuffle">shuffle</span>
+            <span class="material-icons album-add">add</span>
+            <span class="material-icons album-share">share</span>
+          </div>
+        </div>
+      </div>
+      <div class="songs">
+      </div>
+      <audio src="" id="track-el"></audio>
+    </main>
+    <template id="song-temp">
+      <div class="song">
+        <div class="left-items">
+          <p class="song-index"></p>
+          <div class="song-thumb-holder">
+            <img src="" class="song-thumb">
+          </div>
+          <p class="song-name"></p>
+        </div>
+        <div class="right-items">
+          <p class="song-duration"></p>
+          <div class="song-controls">
+            <span class="material-icons song-add">add</span>
+            <span class="material-icons song-more">more_horiz</span>
+          </div>
+        </div>
+        <span class="material-icons song-play">play_arrow</span>
+      </div>
+    </template>
+    <template id="more-temp">
+      <div class="more-option">
+        <a href="#">Play Similar Music</a>
+        <a href="#">Share this song</a>
+      </div>
+    </template>
+    <div class="overlay">
+    </div>
+    <div class="holderMore">
+    </div>
+  </body>
+</html>

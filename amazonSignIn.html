@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/amazonRegister.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="JS/amazonSignIn.js" defer></script>
+    <title>Amazon</title>
+  </head>
+  <body>
+    <nav class="nav">Amazon Music</nav>
+    <main class="main">
+      <div class="error-handling">
+        <p>There was a problem</p>
+        <ul class="errors">
+        </ul>
+      </div>
+      <h2 class="category">Sign-In</h2>
+      <a href="amazonForgetPass.html"id="forget-pass">Forget password?</a>
+      <form class="form-el">
+        <div class="form-inputs">
+          <div class="form-input">
+            <input type="text" placeholder="Email or phone number" id="email">
+          </div>
+          <div class="form-input">
+            <input type="password" placeholder="Amazon password" id="password">
+            <p class="showing-pass"></p>
+          </div>
+        </div>
+        <div class="form-checks">
+          <input type="checkbox" id="show-password" checked>
+          <label for="show-password">Show password</label>
+        </div>
+        <div class="form-checks">
+          <input type="checkbox" id="keep-sign">
+          <label for="keep-sign">Keep me signed in.<a href="#"> Details</a></label>
+        </div>
+        <button type="submit">Sign-in</button>
+        <p class="attention">By continuing, you agree to Amazon's <a href="#">Conditions of Use</a> and <a href="#">Privacy Notice</a>.</p>
+      </form>
+      <fieldset class="sign-up">
+        <legend class="sign-up-text">New to Amazon?</legend>
+        <a href="amazonSignUp.html">Create a new Amazon account</a>
+      </fieldset>
+    </main>
+    <footer class="footer">
+      <div class="footer-info">
+        <a href="#">Conditions of Use</a>
+        <a href="#">Privacy Notice</a>
+        <a href="#">Help</a>
+      </div>
+      <p class="copyright">
+        &copy;1996-2021,Amazon.com,Inc. or its affiliates
+      </p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+.more-option {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: absolute;
+  background: var(--more-dark-color);
+  z-index: 20;
+  border: 1px solid var(--grey-color);
+  border-radius: 0.5rem;
+  transition: 0.1s;
+  box-shadow: 2px 2px 5px var(--dark-color);
+
+  &.show {
+    display: flex;
+  }
+
+  a {
+    width: 20rem;
+    padding: 1rem;
+    transition: 0.2s;
+
+    &:hover {
+      color: var(--hover-color);
+    }
+
+    &:first-child {
+      border-bottom: 1px solid var(--grey-color);
+      padding-top: 2rem;
+    }
+
+    &:nth-child(2) {
+      border-bottom: 1px solid var(--grey-color);
+    }
+
+    &:nth-child(3) {
+      border-bottom: 1px solid var(--grey-color);
+    }
+
+    &:last-child {
+      padding-bottom: 2rem;
+      text-transform: capitalize;
+    }
+  }
+}
