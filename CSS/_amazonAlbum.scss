@@ -1,44 +1,60 @@
 .amazon-album {
-  min-height: 100vh;
+  min-height: 90vh;
   padding-bottom: 5rem;
   position: relative;
 
-  .pag-holder {
-    width: 140px;
-    overflow-x: hidden;
+  .pagination {
+    width: 100%;
     position: absolute;
-    left: 50%;
-    bottom: 0.5rem;
-    transform: translate(-50%, 0);
+    bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 
-    .pagination {
-      display: inline-flex;
-      justify-content: flex-start;
-      align-items: center;
-      transform: translateX(0);
+    .pag-index {
+      border: 2px solid var(--shadow-color);
+      border-radius: 50%;
+      font-weight: bold;
+      transition: 0.1s;
+      user-select: none;
+      line-height: 35px;
+      width: 39px;
+      height: 39px;
+      text-align: center;
+      cursor: pointer;
 
-      .pag-index {
-        border: 2px solid var(--shadow-color);
-        border-radius: 50%;
-        font-weight: bold;
-        transition: 0.1s;
-        user-select: none;
-        padding: 0.5rem 0.8rem;
-        width: 39px;
-        text-align: center;
-        margin-right: 0.5rem;
-        list-style: none;
-        cursor: pointer;
+      &.active {
+        color: var(--active-color);
+        border: 2px solid var(--active-color);
+      }
 
-        &.active {
-          color: var(--active-color);
-          border: 2px solid var(--active-color);
-        }
+      &:hover {
+        color: var(--hover-color);
+        border: 2px solid var(--hover-color);
+      }
+    }
 
-        &:hover {
-          color: var(--hover-color);
-          border: 2px solid var(--hover-color);
-        }
+    .pag-btn {
+      padding: 0 0.2rem;
+      width: auto;
+      border: 2px solid var(--active-color);
+      background: var(--active-color);
+
+      &:hover {
+        background: var(--hover-color);
+        color: var(--bright-color);
+      }
+    }
+
+    .pag-dots {
+      width: auto;
+      border: none;
+      cursor: default;
+
+      &:hover {
+        color: var(--bright-color);
+        border: none;
       }
     }
   }

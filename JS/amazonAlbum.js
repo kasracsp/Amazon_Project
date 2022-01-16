@@ -10,7 +10,6 @@ const pagination=document.querySelector(".pagination")
  let lengthOfChilds=0
  let numberOfPagination=0
  let choosenPag=1
- let translatePos=0
  let tempAmazonList=[]
 //if sending params be podcast we need some changes
 if(parentAlbum.toLowerCase()==="podcast"){
@@ -108,34 +107,68 @@ function getParameterByName(name, url) {
 }
 //gender pagination index
 function paginationGender(pagLength,index) {
-	for(let i=1;i<=pagLength;i++){
-		let li=document.createElement("li")
-		li.classList.add("pag-index")
-		if(i===index){
-			li.classList.add("active")
+  if(index>1){
+  	let li=document.createElement("li")
+  	li.classList.add("pag-index","pag-btn")
+  	li.textContent="Prev"
+  	li.addEventListener("click",renderPageByPrevBtn)
+  	pagination.appendChild(li)
+  }
+  if(index>2){
+  	let li=document.createElement("li")
+ 	  li.classList.add("pag-index")
+ 	  li.textContent="1"
+ 	  li.addEventListener("click",renderPageByPag)
+ 	  pagination.appendChild(li)
+ 		if(index>3){
+ 			let li=document.createElement("li")
+ 		  li.classList.add("pag-index","pag-dots")
+ 		  li.textContent="..."
+ 	    pagination.appendChild(li)
+ 	  }
+  }
+	for(let i=index-1;i<=index+1;i++){
+		if(i==0){
+				i++
 		}
-		li.textContent=i
-		li.addEventListener("click",renderPageByPag)
-		pagination.appendChild(li)
-	}
+		if(i<=pagLength) {
+			let li=document.createElement("li")
+ 		  li.classList.add("pag-index")
+ 	   	if(i===index){
+ 			  li.classList.add("active")
+ 	   	}
+ 		  li.textContent=i
+ 		  li.addEventListener("click",renderPageByPag)
+ 		  pagination.appendChild(li)
+		}
+  }
+  if(index<pagLength-1){
+ 	  if(index<pagLength-2){
+ 			let li=document.createElement("li")
+ 		  li.classList.add("pag-index","pag-dots")
+ 			li.textContent="..."
+ 	    pagination.appendChild(li)
+ 	  }
+ 	  let li=document.createElement("li")
+ 	  li.classList.add("pag-index")
+ 	  li.textContent=pagLength
+ 	  li.addEventListener("click",renderPageByPag)
+ 	  pagination.appendChild(li)
+  }
+  if(index<pagLength){
+  	let li=document.createElement("li")
+  	li.classList.add("pag-index","pag-btn")
+  	li.textContent="Next"
+  	li.addEventListener("click",renderPageByNextBtn)
+  	pagination.appendChild(li)
+  }
 }
-//render page by clicking on pagination
 function renderPageByPag(e) {
 	choosenPag=parseInt(e.target.textContent)
-	let selectedPag=e.target
-	let pagIndexs=document.querySelectorAll(".pag-index")
-	pagIndexs.forEach(pag=>{
-		pag.classList.remove("active")
-	})
-	selectedPag.classList.add("active")
+	pagination.innerHTML=""
+	paginationGender(numberOfPagination,choosenPag)
 	albumWrapper.innerHTML=""
 	renderPage(tempAmazonList)
-	if(choosenPag===1||choosenPag===2){
-		translatePos=0
-	}else {
-		translatePos=(choosenPag*47)-94
-	}
-	pagination.style.transform=`translate(-${translatePos}px)`
 	moreAndOverlay()
 }
 //render page
@@ -157,4 +190,22 @@ function renderPage(list) {
 		play.href=list[i].url
 		albumWrapper.appendChild(temp)
 	}
+}
+//render page by clicking on previous btn
+function renderPageByPrevBtn(){
+	choosenPag--
+	pagination.innerHTML=""
+	paginationGender(numberOfPagination,choosenPag)
+	albumWrapper.innerHTML=""
+	renderPage(tempAmazonList)
+	moreAndOverlay()
+}
+//render page by clicking on next btn
+function renderPageByNextBtn(){
+	choosenPag++
+	pagination.innerHTML=""
+	paginationGender(numberOfPagination,choosenPag)
+	albumWrapper.innerHTML=""
+	renderPage(tempAmazonList)
+	moreAndOverlay()
 }
